@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> User_Profile Page</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>User Name</th>
+        <th>Profile Bio</th>
+        <th>Profile Location</th>
+    </tr>
+    <tr th:each="userResponseDTO : ${userResponseDTOS}">
+        <th th:text="${userResponseDTO.username()}"/>
+        <th th:text="${userResponseDTO.profileResponseDTO.bio}"/>
+        <th th:text="${userResponseDTO.profileResponseDTO.location()}"/>
+    </tr>
+</table>
+<a th:href="@{/api/v1/home}">Back to the home page</a>
+</body>
+</html>
